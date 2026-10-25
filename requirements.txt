@@ -1,0 +1,5 @@
+# Runtime dependencies. PuLP ships the CBC solver used for the exact ILP.
+pulp>=2.8,<3
+
+# Development / testing.
+pytest>=7
