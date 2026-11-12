@@ -1,0 +1,2 @@
+# Results are written here as results/<experiment>.json by the experiment scripts.
+# Figures are built from these files only (CLAUDE.md invariant 8).

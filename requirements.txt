@@ -1,0 +1,19 @@
+# Convenience requirements file. The authoritative dependency declaration is in
+# pyproject.toml. Install the editable package with its dev extras instead:
+#
+#     pip install -e ".[dev]"
+#
+# This file mirrors the core + dev dependencies for environments that prefer a
+# plain requirements install.
+
+numpy>=1.26
+scipy>=1.12
+scikit-learn>=1.4
+rapidfuzz>=3.6
+pandas>=2.1
+matplotlib>=3.8
+
+# dev
+pytest>=8.0
+hypothesis>=6.100
+pytest-cov>=5.0

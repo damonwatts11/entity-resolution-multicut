@@ -1,0 +1,15 @@
+# Example experiment configuration (placeholder).
+#
+# Each experiment is a config file plus a script (CLAUDE.md "Experiments").
+# Parameters never live in code. Every run writes one JSON file to results/ with
+# the configuration, seed, metrics, certificate (U, L, Delta, gamma), time per
+# pipeline step, peak memory and the commit hash.
+#
+# The concrete schema is defined when the experiment scripts are implemented.
+
+experiment: example
+seeds: [0, 1, 2, 3, 4]
+n: 1000
+theta: 0.1
+rho: 0.1
+B: 100
