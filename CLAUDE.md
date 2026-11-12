@@ -16,6 +16,8 @@ Read these before any non-trivial change. Do not restate their content here.
 | --- | --- |
 | `docs/project.pdf` | What to build and why: formulation, propositions 1 to 3, algorithms (section 8), incremental mode (section 9), tests T1 to T22 (section 11), experiments E1 to E6 and hypotheses H1 to H4 (section 12) |
 | `spec.md` | Definition of done: Level M and Level F checklists |
+| `docs/PROJECT.md` | Implementation plan: the work units (U1 to U19) and milestones the tickets map to |
+| `docs/DECISIONS.md` | Append-only log of execution decisions |
 | `DEVIATIONS.md` | Every departure from `docs/project.pdf`, with its reason |
 
 Order of authority: `docs/project.pdf` defines behaviour, `spec.md` defines completion. If the two disagree, stop and ask. If an implementation must depart from `docs/project.pdf`, record it in `DEVIATIONS.md` in the same commit.
@@ -108,3 +110,21 @@ Do not implement or propose unless asked: learned matchers beyond logistic regre
 3. Before declaring a task finished, run `make test` and state which boxes of `spec.md` the change allows to be ticked. Do not tick boxes yourself.
 4. Report results as they are. If an experiment contradicts a hypothesis, say so plainly and do not adjust the setup to change the outcome.
 5. When something in the project document is ambiguous or appears incorrect, ask before choosing an interpretation.
+
+## Ticket workflow
+
+Execution is planned as GitHub issues (see the epic). Work them with the
+work-ticket skill, one ticket per fresh conversation, one branch and one PR per
+issue, code review before the PR, and a `## Handoff` comment on the issue at the
+end. Append one line to the epic `## Progress` section when a ticket finishes.
+
+- **Tracking without custom labels.** This repo is managed through the GitHub MCP,
+  which cannot create labels or milestones. Milestone and order are in the ticket
+  id `[M<n>-NN]` and the epic checklist; type and status are in the ticket body.
+  An open issue is pending, a closed issue is done.
+- **Merge policy: auto.** Each ticket session merges its own PR once the
+  acceptance commands, the review and CI pass.
+- **Working rules.** Never expand a ticket's scope. No invented results: every
+  number comes from a reproducible script. For local, reversible details, assume
+  and document in the handoff; for anything that changes the spec or another
+  ticket, ask or block.
